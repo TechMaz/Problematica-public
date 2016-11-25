@@ -11,6 +11,7 @@ httpserver.pid
 applications/Problematica/databases/sql.log
 applications/Problematica/sessions/
 applications/admin/errors/
+applications/admin/private/
 .Python
 applications/Problematica/databases/
 applications/__init__.pyc
