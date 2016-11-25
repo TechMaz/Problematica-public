@@ -1,6 +1,7 @@
-# Problematica &nbsp;&nbsp; [![GitHub release](https://img.shields.io/github/release/Techmaz/Problematica-public.svg)](https://github.com/TechMaz/Problematica-public/releases)
+# Problematica
 Unsolved problems get solved, in style!
 
+[![GitHub release](https://img.shields.io/github/release/Techmaz/Problematica-public.svg)](https://github.com/TechMaz/Problematica-public/releases)
 [![Build Status](https://travis-ci.org/TechMaz/Problematica-public.svg?branch=master)](https://travis-ci.org/TechMaz/Problematica-public)
 [![GitHub issues](https://img.shields.io/github/issues/TechMaz/Problematica-public.svg)](https://github.com/TechMaz/Problematica-public/issues)  
 
