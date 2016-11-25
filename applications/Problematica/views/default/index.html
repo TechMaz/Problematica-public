@@ -1,0 +1,57 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+
+{{block header}}
+    <header class="container-fluid background">
+      <!--<p class="new-to-hunting">New to problem bounty hunting? <a href="#info">Start Here</a>.</p>-->
+    </header>
+{{end}}
+
+
+<div class="main-jumbotron jumbotron">
+ <div class="container main-title-container">
+  <!--<div class="user-links"><a>Dashboard</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>Logout</a></div>-->
+  <h1 class="content-title">Welcome to Problematica!</h1>
+  <h2 class="content-subtitle">The open problem community</h2>
+  <p class="new-to-hunting">New to problem bounty hunting? <a class="btn btn-primary btn-md" href="/help" role="button">learn more</a></p>
+ </div>
+</div>
+
+<section class="main-content">
+
+ <div class="panel panel-primary topics-panel">
+     <div class="panel-heading">{{ = A('Topics', _href = URL('topics'))}}</div>
+     <div class="panel-body multicolumn">
+         <row>
+         <p class="topic-name col-lg-3 col-md-4 col-sm-6">{{ = A('All', _href = everything_topic.get_URL())}}</p>
+         {{for topic in topic_list:}}
+              {{if topic.get_name()!='All':}}
+               <p class="topic-name col-lg-3 col-md-4 col-sm-6">{{ = A(topic.get_name(), _href = URL('topic',args=(topic.get_name())))}}</p>
+              {{pass}}
+         {{pass}}
+         </row>
+     </div>
+ </div>
+
+<!-- Table Inclusion Code -->
+ <script>
+    var problem_Table_Input = {
+      uniqueIdentifier: 0,
+      title: "Some Problems",
+      initialSize: 10,
+      incrementSize: 5,
+      filterType: "ALL", //can be "ALL", "userDonated", "userSolved", or "topic"
+      filterArguement: null //topic name or userID depending on filtertype
+    }
+ </script>
+{{include 'default/problemtable.html'}}
+<script type="text/javascript">
+  $('#vue-div').attr('id', 'vue-div-'+problem_Table_Input.uniqueIdentifier);
+  var APP = null;
+  jQuery(function(){APP = app(problem_Table_Input);});
+</script>
+<!-- End of Table Inclusion Code -->
+
+
+
+</section>

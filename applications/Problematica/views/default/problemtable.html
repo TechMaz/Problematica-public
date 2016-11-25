@@ -1,0 +1,61 @@
+{{#left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{#extend 'layout.html'}}
+
+ <!--<script src="{{=URL('static', 'js/vue.js')}}"></script> Now in Layout.html-->
+<script>
+    var problems_url = "{{=URL(c='problem_table_api', f='get_problems')}}";
+</script>
+
+<div id="vue-div" style="display:none">
+
+<div class="problems-table">
+  <div class="panel panel-primary problems-panel">
+      <div class="panel-heading">${tableTitle}</div>
+      <table class="table">
+         <thead>
+             <tr>
+                <th v-for="(column, index) in columns" v-on:click="toggle_sort(index); get_problems()">
+                  <span v-if="(sorting_by!=index)" class="sorting-icon">
+                    <i class="fa fa-sort"></i>
+                  </span>
+                  <span v-else class="sorting-icon">
+                    <i v-if="currentSortDirection=='LowToHigh'" class="fa fa-caret-up"></i>
+                    <i v-if="currentSortDirection=='HighToLow'" class="fa fa-caret-down"></i>
+                  </span>
+                  <span class="problem-table-column-title">
+                    ${column.name}
+                  </span>
+                </th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr v-if="problems.length>0" v-for="problem in problems">
+                   <td><b>
+                     <a v-bind:href="'{{=URL('problem')}}/'+problem.id">${problem.title}</a>
+                   </b></td>
+                   <td>${problem.clean_current_bounty}</td>
+                   <td>${problem.clean_num_donaters}</td>
+                   <td>${problem.clean_date_posted}</td>
+              </tr>
+              <tr v-if="problems.length==0" >
+                <td>
+                    None
+                </td>
+              </tr>
+              <tr v-if="has_more" v-on:click="get_more()" class="show_more">
+                  <td>
+                    ...
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+
+              </tr>
+          </tbody>
+      </table>
+   </div>
+</div>
+
+</div>
+
+<script src="{{=URL('static', 'js/problemtable.js')}}"></script>

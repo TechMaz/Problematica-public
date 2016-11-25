@@ -1,0 +1,94 @@
+
+.problems-table{
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+
+    .panel-primary{
+        border-color: rgba(123, 124, 128, 0.5);
+        @include add-boxshadow(0px, 0px, 6px, 0px, rgba(0,0,0,0.2));
+    }
+
+    .topics-panel{
+        padding-bottom: 0px;
+
+        a{
+            color: $jet;
+        }
+
+        div.panel-body{
+            padding: 15px 15px 10px 15px;
+
+            a{
+                color: $jet;
+            }
+        }
+    }
+
+
+
+    .panel-primary>.panel-heading{
+        //color: #325d88;
+        color: $jet;
+        //color: #FFF;
+        font-weight: bold;
+        //background-color: $isabelline2;
+        background-color: rgba(221, 213, 208, 0.8);
+        border-color: $trolley;
+    }
+
+    .panel .panel-heading, .panel .panel-title{
+        line-height: 18px;
+    }
+
+    p.topic-name{
+        line-height: 20px;
+        font-weight: bold;
+    }
+
+    table{
+        width: 100%;
+        //width: 95vw;
+        //margin: 2vw 2vw 2vw 1.3vw;
+        border: 1px solid $gainsboro;
+
+        tr{
+            border-color: $gainsboro;
+        }
+
+        thead{
+            background-color: $isabelline;
+
+            th{
+                padding: 5px 8px;
+
+                .problem-table-column-title {
+                  cursor: default;
+                }
+
+                .sorting_icon {
+                  margin-left: 3px;
+                }
+            }
+
+            tr{
+                text-transform: uppercase;
+                font-size: 12px;
+
+            }
+
+        }
+
+        tbody {
+          a {
+            color: $jet;
+          }
+          .show_more {
+            cursor: default;
+          }
+        }
+    }
+    .show_more {
+      margin: auto;
+      width: 100%;
+    }
+}

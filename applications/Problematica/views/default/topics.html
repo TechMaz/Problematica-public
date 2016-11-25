@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+<div class="row text-center topics-title">
+    <h1>Topics:</h1>
+</div>
+<!-- <hr class="category-hr">-->
+<br>
+<div class="row">
+    {{for topic in topics:}}
+    <div class="col-lg-4 col-md-6 col-sm-12 subject-col">
+        <a href="{{=topic.get_URL()}}"><div class="topic-box" id="t{{=topic.get_id()}}">
+            <h2 class="subject-heading">{{=topic.get_name()}}</h2>
+        </div></a>
+    </div>
+    {{pass}}
+
+ </div>

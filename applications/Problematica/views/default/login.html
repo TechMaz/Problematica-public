@@ -1,0 +1,38 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+    <header class="container-fluid background">
+    </header>
+{{end}}
+
+<div class="bkgimg-login"> </div>
+
+<div class="login-box">
+    <div class="panel-problematica panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Login</h3>
+      </div>
+      <div class="panel-body">
+          <!--<form>
+              <input class="problematica-text-field email-field" type="email" name="email" placeholder="email" required>
+              <input class="problematica-text-field pass-field" type="password" name="pass" placeholder="password" required>
+              <div class="rememberme">
+                <input type="checkbox" value=""><label class="rememberme-label">Remember Me</label>
+              </div>
+              <a href="#" class="forgotpw-link">Forgot Password?</a>
+              <button class="btn btn-primary login-btn" type="submit" name="login-btn">
+                  <p class="login-btn-text">Login</p>
+              </button>
+          </form>-->
+            {{=form.custom.begin}}
+            {{=form.custom.widget.email}}
+            {{=form.custom.widget.password}}
+            <div class="rememberme">
+                {{=form.custom.widget.remember_me}}<label class="rememberme-label">Remember Me</label>
+            </div>
+            <a href="#" class="forgotpw-link">Forgot Password?</a>
+            {{=form.custom.submit}}
+            {{=form.custom.end}}
+      </div>
+    </div>
+</div>

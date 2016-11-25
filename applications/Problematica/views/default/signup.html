@@ -1,0 +1,29 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+    <header class="container-fluid background">
+    </header>
+{{end}}
+
+
+<div class="bkgimg-signup"> </div>
+
+<div class="signup-box">
+
+    <div class="panel-problematica panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Sign Up</h3>
+      </div>
+      <div class="panel-body">
+          {{=form.custom.begin}}
+            {{=form.custom.widget.first_name}}
+            {{=form.custom.widget.last_name}}
+            {{=form.custom.widget.email}}
+            {{=form.custom.widget.password}}
+            {{=form.custom.widget.password_two}}
+            {{=form.custom.submit}}
+          {{=form.custom.end}}
+      </div>
+    </div>
+
+</div>

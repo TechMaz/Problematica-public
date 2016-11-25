@@ -1,0 +1,31 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+
+{{block header}}
+    <header class="container-fluid background">
+      <!--<p class="new-to-hunting">New to problem bounty hunting? <a href="#info">Start Here</a>.</p>-->
+    </header>
+{{end}}
+
+
+<div class="jumbotron">
+ <div class="container">
+  <!--<div class="user-links"><a>Dashboard</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>Logout</a></div>-->
+  <h1 class="content-title">Upload Image</h1>
+
+  <div class="image-form">
+    {{=imageForm.custom.begin}}
+    {{=imageForm.custom.widget.picture}}
+    <div class="upload-select-button-container">
+      {{=imageForm.custom.submit}}
+    </div>
+    {{=imageForm.custom.end}}
+  </div>
+
+
+ </div>
+</div>
+
+
+
+</section>

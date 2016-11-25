@@ -1,0 +1,155 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+{{end}}
+
+<script>
+    var add_donation_url = "{{=URL('donate')}}";
+    var donate_button_pressed = "{{=URL('donate', args=(requestedProblemId))}}"
+</script>
+
+<div class="problem-container">
+
+
+  <div class="jumbotron" id="vue-div1">
+     <div>
+        <section class="problem-maincontent">
+          <section class="problem-header">
+            <div class="title-section">
+                <h2 class="problem-title">{{=problem.get_title()}} {{='(Solved)' if problem.get_status()=='closed' else ''}}</h2>
+                <p class="problem-subtitle">Hosted by: {{=A(problem.get_institution().get_capitalized_fullname(),_href=problem.get_institution().get_URL())}}</p>
+                <p class="problem-subtitle">Topic: {{=A(problem.get_topic().get_name(),_href=problem.get_topic().get_URL())}}</p>
+            </div>
+            <div class="bounty-and-attributes">
+                <div class="attribute-section">
+                    <!--<div class="attribute-box">
+                        <object type="image/svg+xml" class="attribute-img money-bag" data="{{=URL('static','icons/dollar-bag.svg')}}">Your browser does not support SVGs</object>
+                        <p class="attribute-value">2.7M</p>
+                    </div>-->
+                    <div class="attribute-box">
+                        <object type="image/svg+xml" class="attribute-img people" data="{{=URL('static','icons/people.svg')}}">Your browser does not support SVGs</object>
+                        <p class="attribute-value">{{=problem.get_clean_num_donators()}}</p>
+                    </div>
+                    <div class="attribute-box">
+                        <object type="image/svg+xml" class="attribute-img" data="{{=URL('static','icons/time.svg')}}">Your browser does not support SVGs</object>
+                        <p class="attribute-value">{{=problem.get_how_long_ago_posted()}}</p>
+                    </div>
+                </div>
+                <div class="problem-bounty"><div class="bounty"><h4>{{= 'Current' if problem.get_status()=='open' else 'Final'}} Bounty:</h4>
+                   ${{=int(round(problem.get_current_bounty()))}}</div></div>
+            </div>
+          </section>
+            <ul class="nav nav-tabs problem-tabs">
+                {{if problem.get_status() == 'open':}}
+                <div class="donate-or-solve">
+                <a href="/postsolution/{{=request.args(0,cast=int)}}"><button class="btn submit-sol-btn">Submit Solution</button></a>
+                <button class="btn donate-btn" v-on:click="donate_button()">Donate to This Problem</button>
+                    <div v-if="is_donating" id="add_post_div">
+                        <form action="#" v-on:submit.prevent="add_donation" class="form-horizontal" enctype="multipart/form-data" method="post">
+                            <div id="add-new-post">
+                                <div class="form-group" id="no_table_post__row">
+                                    <div><input class="form-control string" id="no_table_post" name="post_content" type="number" v-model="form_post_content" placeholder="Donation Amount"> </input>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="submit_record__row">
+                                    <div>
+                                        <input class="post-button" id="add_post_submit" type="submit" value="Donate" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <button v-if="is_donating" class="btn btn-warning btn-sm" v-on:click="donate_button()">Cancel</button>
+                    <!-- <a href="/donate/{{=request.args(0,cast=int)}}?donation_amount=10"><button class="btn donate-btn" role="button">Donate to This Problem</button></a> -->
+                </div>
+                {{elif problem.get_status() == 'closed':}}
+                <div class="solved-by">
+                  Solved By: {{=A(problem.get_solver().get_capitalized_fullname(),_href=problem.get_solver().get_URL())}}
+                </div>
+                {{pass}}
+              <li class="active"><a data-toggle="pill" href="#problem">Formulation</a></li>
+              <li><a data-toggle="pill" href="#about">About</a></li>
+              <li><a data-toggle="pill" href="#implications">Why Does It Matter?</a></li>
+              <li><a data-toggle="pill" href="#updates">Updates</a></li>
+              <!-- <li><a data-toggle="pill" href="#institution">Institution</a></li> -->
+              <!--<li><a data-toggle="pill" href="#comments">Comments</a></li>-->
+            </ul>
+            <div class="tab-content">
+                <div id="problem" class="tab-pane fade in active">
+                    <div class="problem-textbox formulation">
+                      {{=problem.get_formulation()}}
+                    </div>
+                </div>
+                <div id="about" class="tab-pane fade">
+                  <div class="problem-textbox about">
+                    {{=problem.get_about()}}
+                  </div>
+                </div>
+                <div id="implications" class="tab-pane fade">
+                  <div class="problem-textbox implications">
+                    {{=problem.get_implications()}}
+                  </div>
+                </div>
+                <div id="updates" class="tab-pane fade">
+                  <div class="problem-textbox updates">
+                    {{=problem.get_updates()}}
+                  </div>
+                </div>
+                <!-- <div id="institution" class="tab-pane fade">
+                    <p class="hosted-by-text">Hosted by: <h3>Institution Name</h3></p>
+                    <img class="inst-img" src="http://placehold.it/220x150">
+                    <div class="inst-section-body">
+                        <p class="inst-description">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <br>
+                        <p class="inst-num-posted">Number of problems posted: X</p>
+                    </div>
+                </div> -->
+                <!--<div id="comments" class="tab-pane fade">
+
+                </div>-->
+            </div>
+
+
+        </section>
+     </div>
+  </div>
+
+    <!--<hr class="problem-hr">-->
+  <!--<section class="problem-section">
+
+  </section>-->
+
+    <section class="donater-content">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">Donors</div>
+            <div class="panel-body">
+              {{for donor in donors:}}
+              <button class="donor-circle rank{{=donor[3]}} n{{=donor[4]}}" style="background-image: url({{=donor[0].get_profile_pic_source()}});" type="button" data-toggle="tooltip" data-placement="top" title="{{=donor[0].get_firstname()}} {{=donor[0].get_lastname()}}: ${{=donor[1]}}"></button>
+                  <!--{{=donor[1]}}, {{=donor[2]}}%, rank {{=donor[3]}}-->
+              {{pass}}
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+
+    $('.grid').masonry({
+    // options...
+    itemSelector: '.grid-item',
+    columnWidth: 200
+    });
+</script>
+
+<script src="{{=URL('static', 'js/problem.js')}}"></script>

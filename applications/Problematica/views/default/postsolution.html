@@ -1,0 +1,10 @@
+{{extend 'layout.html'}}
+<h1>Post Solution</h1>
+{{if problem.get_status() == 'open':}}
+  {{=form}}
+  {{=form.hidden_fields()}}
+  <div class="flash">{{=response.flash or ''}}</div>
+
+{{else:}}
+  Sorry, this problem has already been solved
+{{pass}}

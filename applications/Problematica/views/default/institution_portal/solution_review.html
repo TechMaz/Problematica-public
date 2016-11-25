@@ -1,0 +1,43 @@
+<div class="institution-solution_review">
+
+  <i class="fa fa-arrow-left" aria-hidden="true" v-on:click="is_reviewing_solution=false"></i>
+
+  <div class="content">
+    <p>
+      <span class="info_marker">Solution To</span><br> ${solution_reviewing.solution_to}
+    </p>
+    <p>
+      <span class="info_marker">Submitted By</span><br> ${solution_reviewing.submitter}
+    </p>
+    <p>
+      <span class="info_marker">Bounty</span><br> ${solution_reviewing.current_bounty}
+    </p>
+    <p>
+      <span class="info_marker">Link To Solution</span><br> <a v-bind:href="solution_reviewing.link_to_journal">${solution_reviewing.link_to_journal}</a>
+    </p>
+    <p>
+      <span class="info_marker">PDF of Solution</span><br> <a v-bind:href="solution_reviewing.link_to_pdf">Download</a>
+    </p>
+    <p>
+      <span class="info_marker">Comments</span><br>
+      ${solution_reviewing.comment}
+    </p>
+
+    <h2>Final Decision</h2>
+
+    <div v-if="inbox_option_selected == inbox_pending_option">
+      <div class="accept-button">
+        <button type="button" v-on:click="judge_solution('right')" name="accept_button">Right</button>
+      </div>
+      <div class="reject-button">
+        <button type="button" v-on:click="judge_solution('wrong')" name="reject_button">Wrong</button>
+      </div>
+    </div>
+
+    <div v-if="inbox_option_selected == inbox_completed_option">
+      <h3>${solution_reviewing.status}</h3>
+    </div>
+
+  </div>
+
+</div>

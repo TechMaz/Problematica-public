@@ -1,0 +1,529 @@
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa Luong :)
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+flag1
+flag2
+flag3
+test get_donations unsuccessful
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa Luong :)
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+[<__restricted__.PicaDonation instance at 0x10acf4638>, <__restricted__.PicaDonation instance at 0x108750290>, <__restricted__.PicaDonation instance at 0x11719d050>, <__restricted__.PicaDonation instance at 0x108693a70>, <__restricted__.PicaDonation instance at 0x11719d320>, <__restricted__.PicaDonation instance at 0x1084f2638>, <__restricted__.PicaDonation instance at 0x108693560>, <__restricted__.PicaDonation instance at 0x1099e07a0>, <__restricted__.PicaDonation instance at 0x108693b90>, <__restricted__.PicaDonation instance at 0x1086933b0>, <__restricted__.PicaDonation instance at 0x108693d40>, <__restricted__.PicaDonation instance at 0x1086938c0>, <__restricted__.PicaDonation instance at 0x108693c68>, <__restricted__.PicaDonation instance at 0x108693e18>, <__restricted__.PicaDonation instance at 0x108693e60>]
+test get_donations successful
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa Luong :)
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+test get_donated_problems unsuccessful
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa Luong :)
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+test get_donated_problems unsuccessful
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa Luong :)
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+flag1
+test get_donated_problems unsuccessful
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa Luong :)
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+473
+test get_total_money_donated successful
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa Luong :)
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+473
+test get_total_money_donated successful
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa Luong :)
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+100403
+test get_total_money_donated successful
+
+100K
+test get_clean_total_money_donated successful
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa Luong :)
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+100403
+test get_total_money_donated successful
+
+100K
+test get_clean_total_money_donated successful
+
+Hi I'm Khoa
+test get_clean_total_money_donated successful
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+100403
+test get_total_money_donated successful
+
+100K
+test get_clean_total_money_donated successful
+
+test set_bio successful
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+100403
+test get_total_money_donated successful
+
+100K
+test get_clean_total_money_donated successful
+
+test set_bio successful: Hi I'm Khoa
+
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa
+
+test get_academic_fields successful
+Video Games :)
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+100403
+test get_total_money_donated successful
+
+100K
+test get_clean_total_money_donated successful
+
+test set_bio successful: Hi I'm Khoa
+
+test set_academic_fields unsuccessful
+
+========================================
+========================================
+test search successful
+
+test is_found_in_database successful
+
+test is_user_same_as successful
+
+test get_id successful
+
+test get_bio successful
+Hi I'm Khoa
+
+test get_academic_fields successful
+Science
+
+test get_firstname successful
+Khoa
+
+test get_lastname successful
+Luong
+
+4
+31
+29
+32
+33
+test get_submitted_solutions successful
+
+test get_solved_problems successful
+
+0
+test get_num_problems_solved successful
+
+100403
+test get_total_money_donated successful
+
+100K
+test get_clean_total_money_donated successful
+
+test set_bio successful: Hi I'm Khoa
+
+========================================
+========================================
+test get_firstname unsuccessful
+
+========================================
+========================================
+flag1
+flag2
+flag3
+test get_firstname unsuccessful
+
+========================================
+========================================
+flag1
+flag2
+flag3
+test get_firstname unsuccessful
+
+========================================
+========================================
+flag1
+flag2
+flagLucy
+test get_firstname unsuccessful
+
+========================================
+========================================
+[<__restricted__.PicaTopic instance at 0x11777b9e0>, <__restricted__.PicaTopic instance at 0x11777bab8>, <__restricted__.PicaTopic instance at 0x11777bb48>, <__restricted__.PicaTopic instance at 0x11777bbd8>, <__restricted__.PicaTopic instance at 0x11777bc68>, <__restricted__.PicaTopic instance at 0x11777bcf8>, <__restricted__.PicaTopic instance at 0x11777bd88>, <__restricted__.PicaTopic instance at 0x11777be18>, <__restricted__.PicaTopic instance at 0x11777bea8>, <__restricted__.PicaTopic instance at 0x11777bf38>, <__restricted__.PicaTopic instance at 0x11777bfc8>, <__restricted__.PicaTopic instance at 0x10acb2098>, <__restricted__.PicaTopic instance at 0x10acb2128>, <__restricted__.PicaTopic instance at 0x10acb21b8>, <__restricted__.PicaTopic instance at 0x10acb2248>, <__restricted__.PicaTopic instance at 0x10acb22d8>]
+test get_firstname successful

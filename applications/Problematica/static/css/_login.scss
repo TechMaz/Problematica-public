@@ -1,0 +1,101 @@
+
+div.bkgimg-login{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.login-box{
+    .panel-problematica{
+        position: absolute;
+        height: 34vmin;
+        width: 60vmin;
+        min-height: 245px;
+        min-width: 450px;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        margin-top: -28vmin;
+        margin-left: -30vmin;
+
+        .panel-title{
+            font-size: 16px;
+        }
+
+        .rememberme{
+            position: relative;
+            float: left;
+            padding-top: 2px;
+            padding-bottom: 5px;
+            padding-left: 15px;
+            font-size: 14px;
+            z-index: 4;
+            color: $trolley;
+
+            .rememberme-label{
+                padding-left: 5px;
+            }
+        }
+
+        .forgotpw-link{
+            position: relative;
+            float: right;
+            padding-top: 2px;
+            padding-bottom: 5px;
+            padding-right: 15px;
+            font-size: 14px;
+            z-index: 4;
+        }
+
+        input.btn.btn-primary{
+            width: 26vmin;
+            height: 32px;
+            position: absolute;
+            left: 50%;
+            margin-left: -13vmin;
+            bottom: 2.5vmin;
+
+            /*.login-btn-text{
+                margin-top: -1px;
+            }*/
+        }
+    }
+
+    #auth_user_email,
+    #auth_user_password,
+    #auth_user_password_two{
+        padding-left: 5px;
+        z-index: 3;
+    }
+}
+
+.error_wrapper{
+    font-size: 14px;
+    position: absolute;
+    z-index: 2;
+    height: 20px;
+    left: 0;
+    top: 95px;
+    width: 100%;
+    height: 65%;
+    color: $regal;
+    //border: 1px solid black;
+    display: inline-block;
+    #email__error{
+        position: absolute;
+        width: 140px;
+        top: 3px;
+        text-align: left;
+        left: 30px;
+    }
+    #password__error{
+        position: absolute;
+        width: 140px;
+        top: 52px;
+        text-align: left;
+        left: 30px;
+    }
+}

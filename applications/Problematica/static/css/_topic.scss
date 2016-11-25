@@ -1,0 +1,14 @@
+hr.topic-hr{
+    border-color: $jet;
+}
+
+div.topic-description{
+    display: inline-block;
+    min-height: 100px;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    background: $sand;
+}

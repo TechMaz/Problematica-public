@@ -1,0 +1,97 @@
+
+<div class="institution-my-problems">
+
+  <!-- Table of Institution's Problems -->
+  <div v-if="!is_editing_problem">
+
+    <h1>Problems currently hosted</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Problem</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+          <tbody>
+            <!-- Checks if user has posted problems, lists problems that have been posted by the user-->
+
+                    <tr v-for="(problem, index) in my_problems">
+                    <td>
+                      <a v-bind:href="'{{=URL('problem')}}/'+problem.id">${problem.title}</a>
+                    </td>
+                    <td><i class="fa fa-pencil-square-o" aria-hidden="true"
+                      v-on:click="edit_problem(index)"></i></td>
+                    </tr>
+
+          </tbody>
+
+    </table>
+
+    <!-- If user has not posted problems, displays message-->
+    <div v-if="my_problems.length == 0">
+        Your institution has not posted any problems yet. Please use the "new problem" tab to post your unsolved problems!
+    </div>
+  </div>
+
+  <!-- Editing a particular problem -->
+  <div v-if="is_editing_problem">
+
+    <h1>Editing: ${problem_editing.title}</h1>
+
+
+    <p>${editing_tab} text:</p>
+
+    <div class="formulation-editable">
+      <textarea v-on:keyup="update_edit_preview()" v-model="editing_content[editing_tab]"
+       rows="8" cols="40"></textarea>
+    </div>
+
+    <p>${editing_tab} preview:</p>
+    <ul class="nav nav-tabs problem-tabs">
+      <li class="active" v-on:click="editing_tab = 'formulation'"><a data-toggle="pill" href="#problem">Formulation</a></li>
+      <li v-on:click="editing_tab = 'about'"><a data-toggle="pill" href="#about">About</a></li>
+      <li v-on:click="editing_tab = 'implications'"><a data-toggle="pill" href="#implications">Why Does It Matter?</a></li>
+      <li v-on:click="editing_tab = 'updates'"><a data-toggle="pill" href="#updates">Updates</a></li>
+      <!-- <li><a data-toggle="pill" href="#institution">Institution</a></li> -->
+      <!--<li><a data-toggle="pill" href="#comments">Comments</a></li>-->
+    </ul>
+    <div class="tab-content">
+        <div id="problem" class="tab-pane fade in active">
+            <div class="problem-textbox formulation">
+              ${problem_editing.formulation}
+            </div>
+        </div>
+        <div id="about" class="tab-pane fade">
+          <div class="problem-textbox about">
+              ${problem_editing.about}
+          </div>
+        </div>
+        <div id="implications" class="tab-pane fade">
+          <div class="problem-textbox implications">
+              ${problem_editing.implications}
+          </div>
+        </div>
+        <div id="updates" class="tab-pane fade">
+          <div class="problem-textbox updates">
+              ${problem_editing.updates}
+          </div>
+        </div>
+    </div>
+
+
+
+    <div class="buttons">
+      <div class="save-button">
+        <button type="submit" v-on:click="save_problem_edits()" name="accept_button">Save</button>
+      </div>
+      <div class="cancel-button">
+        <button type="button" v-on:click="cancel_editing()" name="reject_button">Cancel</button>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+  </div>
+
+
+</div>

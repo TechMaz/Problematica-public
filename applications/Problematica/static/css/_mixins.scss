@@ -1,0 +1,41 @@
+
+// Custom Sass Mixins - by Steven Mazliach - for Problematica */
+
+@mixin center-object($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@mixin center-object-horizontal($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+@mixin no-boxshadow() {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+@mixin setfont($font-family: auto, $font-size: auto, $color: auto) {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $color;
+}
+
+@mixin add-boxshadow($one: 0px, $two: 0px, $three: 0px, $four: 0px, $color: #000){
+    -webkit-box-shadow: $one $two $three $four $color;
+    -moz-box-shadow: $one $two $three $four $color;
+    box-shadow: $one $two $three $four $color;
+}

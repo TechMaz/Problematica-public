@@ -1,0 +1,52 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+
+{{block header}}
+    <header class="container-fluid background">
+      <!--<p class="new-to-hunting">New to problem bounty hunting? <a href="#info">Start Here</a>.</p>-->
+    </header>
+{{end}}
+
+
+ <div class="search-container">
+  <!--<div class="user-links"><a>Dashboard</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;<a>Logout</a></div>-->
+  <h1 class="content-title">Search</h1>
+
+  {{if foundProblemResults:}}
+  <h2>Problems</h2>
+    {{for problem in problemResults:}}
+    <div class="search-result">
+        {{ = A(problem.get_title(), _href = problem.get_URL())}}
+    </div>
+    {{pass}}
+  {{pass}}
+
+  {{if foundUserResults:}}
+  <h2>Users</h2>
+    {{for user in userResults:}}
+    <div class="search-result">
+        {{ = A(user.get_capitalized_fullname(), _href = user.get_URL())}}
+    </div>
+    {{pass}}
+  {{pass}}
+
+  {{if foundTopicResults:}}
+  <h2>Topics</h2>
+    {{for topic in topicResults:}}
+    <div class="search-result">
+        {{ = A(topic.get_name(), _href = topic.get_URL())}}
+    </div>
+    {{pass}}
+  {{pass}}
+
+  {{if not (foundProblemResults or foundUserResults or foundTopicResults) :}}
+  <div class="search-result">
+    No Results Found
+  </div>
+  {{pass}}
+
+
+ </div>
+
+
+</section>

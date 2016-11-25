@@ -1,0 +1,138 @@
+{{extend 'layout.html'}}
+
+{{if isUsersAccount:}}
+<script src="{{=URL('static','js/profile_editing.js')}}"></script>
+{{pass}}
+
+<div class="profile-container">
+
+    <div class="jumbotron">
+     <div class="container">
+        <section class="profile-maincontent">
+            <div class="profile-photo-container">
+              {{if isUsersAccount:}}<a href='{{=URL('default', 'uploadimage')}}'>{{pass}}
+              <img class="profile-photo" src="{{=user.get_profile_pic_source()}}">
+              <p id="upload-image">Upload Image</p>
+              {{if isUsersAccount:}}</a>{{pass}}
+            </div>
+            <div class="name-and-title">
+                <h2 class="fullname">{{=user.get_capitalized_fullname()}}</h2>
+                <h5 class="user-title"></h5>
+            </div>
+            <div class="attribute-section">
+                <div class="attribute-box">
+                    <object type="image/svg+xml" class="attribute-img money-bag" data="{{=URL('static','icons/dollar-bag.svg')}}">Your browser does not support SVGs</object>
+                    <p class="attribute-value">{{=user.get_clean_total_bounty_won()}}$</p>
+                </div>
+                <div class="attribute-box">
+                    <object type="image/svg+xml" class="attribute-img money-bag" data="{{=URL('static','icons/check.svg')}}">Your browser does not support SVGs</object>
+                    <p class="attribute-value">{{=user.get_num_problems_solved()}}</p>
+
+                </div>
+                <div class="attribute-box">
+                    <i class="fa fa-heart attribute-img" aria-hidden="true" style="font-size:30px; color:black"></i>
+                    <p class="attribute-value">{{=user.get_clean_total_money_donated()}}$</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-text">
+             <div class="bio-section profile-section">
+                <h4 class="bio-label">Bio:</h4>
+                <div id="bio-content" class="content">
+                  {{=user.get_bio()}}
+                  <a id="bio-edit-button" class="profile-edit" > Edit </a>
+                </div>
+                <div id="bio-edit-content" class="editable-content">
+                  {{=bioEditForm.custom.begin}}
+                  {{=bioEditForm.custom.widget.bio}}
+                  {{=bioEditForm.custom.end}}
+                </div>
+             </div>
+
+             <div class="fields-section profile-section">
+                <h4 class="fields-label">Fields:</h4>
+                <div id="acadfields-content" class="content">
+                  {{=user.get_academic_fields()}}
+                  <a id="acadfields-edit-button" class="profile-edit"> Edit </a>
+                </div>
+                <div id="acadfields-edit-content" class="editable-content">
+                  {{=acadfieldsEditForm.custom.begin}}
+                  {{=acadfieldsEditForm.custom.widget.acadfields}}
+                  {{=acadfieldsEditForm.custom.end}}
+                </div>
+             </div>
+        </section>
+     </div>
+    </div>
+
+    <section class="main-content profile-body">
+
+      <!-- Table Inclusion Code -->
+       <script>
+          var problem_Table_Input_0 = {
+            uniqueIdentifier: 0,
+            title: "Solved",
+            initialSize: 5,
+            incrementSize: 2,
+            filterType: "userSolved", //can be "ALL", "userDonated", "userSolved", or "topic"
+            filterArguement: {{=user.get_id()}} //topic name or userID depending on filtertype
+          }
+       </script>
+      {{include 'default/problemtable.html'}}
+      <script type="text/javascript">
+        $('#vue-div').attr('id', 'vue-div-'+problem_Table_Input_0.uniqueIdentifier);
+        var APP = null;
+        jQuery(function(){APP = app(problem_Table_Input_0);});
+      </script>
+      <!-- End of Table Inclusion Code -->
+
+      <!-- Table Inclusion Code -->
+       <script>
+          var problem_Table_Input_1 = {
+            uniqueIdentifier: 1,
+            title: "Donated To",
+            initialSize: 5,
+            incrementSize: 2,
+            filterType: "userDonated", //can be "ALL", "userDonated", "userSolved", or "topic"
+            filterArguement: {{=user.get_id()}} //topic name or userID depending on filtertype
+          }
+       </script>
+      {{include 'default/problemtable.html'}}
+      <script type="text/javascript">
+        $('#vue-div').attr('id', 'vue-div-'+problem_Table_Input_1.uniqueIdentifier);
+        var APP = null;
+        jQuery(function(){APP = app(problem_Table_Input_1);});
+      </script>
+      <!-- End of Table Inclusion Code -->
+
+    <!-- Table to display solutions submitted by user, only seen if user is logged in -->
+    {{if isUsersAccount:}}
+    <div class="problems-table">
+      <div class="panel panel-primary problems-panel">
+        <div class="panel-heading">My Solutions (Viewable only by you)</div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Solution To</th>
+                <th>Status</th>
+                <th>Link/PDF</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{for solution in posted_soln:}}
+                <tr> <td><b>{{=A(solution.get_problem().get_title(),
+                  _href=URL('problem', args=solution.get_problem().get_id()))}}
+                </b></td>
+                <td>{{=solution.get_status()}}</td>
+                <td>{{=A('Link', _href=solution.get_link())}}/{{=A('PDF', _href=solution.get_pdf_download_link())}}</td>
+                </tr>
+              {{pass}}
+            </tbody>
+          </table>
+        </div>
+     </div>
+    {{pass}}
+
+      </section>
+</div>

@@ -1,0 +1,80 @@
+<div class="institution-inbox">
+
+{{user_id = auth.user.id}}
+    {{problem_title = None}}
+    {{problem_id = None}}
+    {{problem_bounty = None}}
+
+
+
+  <h1>Inbox ({{=pending_solutions_count}})</h1>
+
+  <div class="inbox-panel">
+
+      <div class="inbox-panel-body">
+
+        <p style="font-style:italic">
+          This is a list of attempted solutions for problems your institution is
+           hosting. <br> Please review each one and determine its correctness.
+        </p>
+
+        <div id="inbox-navbar">
+          <div v-for="(inbox_option, index) in inbox_options" v-on:click="inbox_option_selected = index" class="item"
+            v-bind:class="{item_selected: inbox_option_selected == index }"><p>${inbox_option}</p>
+          </div>
+          <div class="clear"></div>
+        </div>
+
+        <div v-if="inbox_option_selected == inbox_pending_option">
+          <table>
+            <thead>
+              <tr>
+                <th v-for="column in inbox_columns"> ${column.name}</th>
+                <th>Status</th>
+                <th>View Solution</th>
+              </tr>
+            </thead>
+                <tbody>
+                <tr v-for="solution in pending_solutions">
+                    <td><a v-bind:href="'{{=URL('problem')}}/'+solution.problem_id">${solution.solution_to}</a></td>
+                    <td><a v-bind:href="'{{=URL('profile')}}/'+solution.submitter_id">${solution.submitter}</a></td>
+                    <td>${beautify_money(solution.current_bounty)}</td>
+                    <td>${solution.beautified_date_submitted}</td>
+                    <td>${solution.status}</td>
+                    <td><i class="fa fa-search" v-on:click="is_reviewing_solution = true; solution_reviewing = solution" ></i></td>
+                </tr>
+                </tbody>
+
+          </table>
+        </div>
+
+        <div v-if="inbox_option_selected == inbox_completed_option">
+          <table>
+            <thead>
+              <tr>
+                <th v-for="column in inbox_columns">${column.name}</th>
+                <th>Status</th>
+                <th>View Solution</th>
+              </tr>
+            </thead>
+                <tbody>
+                <tr v-for="solution in judged_solutions">
+                        <td><a v-bind:href="'{{=URL('problem')}}/'+solution.problem_id">${solution.solution_to}</a></td>
+                        <td><a v-bind:href="'{{=URL('profile')}}/'+solution.submitter_id">${solution.submitter}</a></td>
+                        <td>${beautify_money(solution.current_bounty)}</td>
+                        <td>${solution.beautified_date_submitted}</td>
+                        <td>${solution.status}</td>
+                        <td><i class="fa fa-search" v-on:click="is_reviewing_solution = true; solution_reviewing = solution" ></i></td>
+                </tr>
+                </tbody>
+
+          </table>
+        </div>
+
+
+
+      </div>
+
+  </div>
+
+</div>

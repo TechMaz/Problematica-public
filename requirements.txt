@@ -1,0 +1,4 @@
+psycopg2==2.6.2
+pyDAL==16.9
+requests==2.12.1
+stripe==1.41.1

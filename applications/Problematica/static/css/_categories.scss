@@ -1,0 +1,87 @@
+
+.category-hr{
+    color: $jet;
+    border-color: $jet;
+}
+
+
+.topics-title{
+    margin-bottom: 20px;
+}
+
+.subject-heading{
+    padding-left: 15px;
+    color: $jet;
+    a{
+        color: $jet;
+
+        &:active,
+        &:focus{
+            color: $jet;
+        }
+    }
+
+}
+
+.subject-col{
+    padding: 20px;
+    //padding-left: 80px;
+
+    div.topic-box{
+        margin: auto;
+        width: 100%;
+        height: 18vh;
+        padding: 2.5vmin;
+        padding-left: 1vmin;
+        text-align: center;
+        //display: inline-block;
+        min-height: 100px;
+        min-width: 90px;
+        max-height: 300px;
+        max-width: 240px;
+        border: 1px solid rgba(123, 124, 128, 0.7);
+        border-radius: 4px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #t16{
+        h2{
+            color: white;
+        }
+        background-image: url(http://res.cloudinary.com/techmaz/image/upload/v1479616145/newtons-pendulum-1132064_1920-min_pftnel.jpg);
+    }
+
+    #t2{
+        h2{
+            color: white;
+        }
+        background-image: url(http://res.cloudinary.com/techmaz/image/upload/v1479612260/math-min_f3o1ik.png);
+    }
+    #t3{
+        h2{
+            color: white;
+        }
+        background-image: url(http://res.cloudinary.com/techmaz/image/upload/e_brightness:-60,o_67/v1479612401/cs-min_fyja5j.png);
+    }
+    #t10{
+        h2{
+            color: white;
+        }
+        background-image: url(http://res.cloudinary.com/techmaz/image/upload/v1479615692/numtheory-min_t6o7za.png);
+    }
+    #t12{
+        h2{
+            color: white;
+        }
+        background-image: url(http://res.cloudinary.com/techmaz/image/upload/c_crop,h_412,w_777/v1479615256/logic-min_esup7v.png);
+    }
+    #t14{
+        h2{
+            color: white;
+        }
+        background-color: gray;
+        background-image: url(http://res.cloudinary.com/techmaz/image/upload/o_67/v1479616449/blocks-1293330_1280-min_vkq8fn.png);
+    }
+}

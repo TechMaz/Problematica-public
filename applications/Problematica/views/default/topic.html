@@ -1,0 +1,27 @@
+{{extend 'layout.html'}}
+<h1> {{= topic.get_name()}} </h1>
+<hr class="topic-hr">
+
+<div class="topic-description">
+    {{=topic.get_description()}}
+</div>
+
+ <!-- Table Inclusion Code -->
+
+  <script>
+     var problem_Table_Input = {
+       uniqueIdentifier: 0,
+       title: "{{=topic.get_name()}} Problems",
+       initialSize: 20,
+       incrementSize: 10,
+       filterType: "{{=filter}}", //can be "ALL", "userDonated", "userSolved", or "topic"
+       filterArguement: "{{=topic.get_name()}}" //topic name or userID depending on filtertype
+     };
+  </script>
+ {{include 'default/problemtable.html'}}
+ <script type="text/javascript">
+   $('#vue-div').attr('id', 'vue-div-'+problem_Table_Input.uniqueIdentifier);
+   var APP = null;
+   jQuery(function(){APP = app(problem_Table_Input);});
+ </script>
+ <!-- End of Table Inclusion Code -->

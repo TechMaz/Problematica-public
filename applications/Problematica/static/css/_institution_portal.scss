@@ -1,0 +1,234 @@
+
+#vue-div {
+  margin-left: 50px;
+}
+
+#portal-navbar {
+  margin-top: 30px;
+  .item {
+    float:left;
+    padding-right: 20px;
+    cursor: default;
+    p {
+      font-size: 20px;
+    }
+  }
+  .item_selected {
+    font-weight: bold;
+  }
+  .item:hover {
+    text-decoration: underline;
+  }
+  .clear {
+    clear:left;
+  }
+}
+
+.institution-portal-main-content {
+  .institution-inbox {
+
+    #inbox-navbar {
+      margin-top: 10px;
+      .item {
+        float:left;
+        padding-right: 20px;
+        cursor: default;
+        p {
+          font-size: 15px;
+        }
+      }
+      .item_selected {
+        font-weight: bold;
+      }
+      .item:hover {
+        font-weight: bold;
+      }
+      .clear {
+        clear:left;
+      }
+    }
+    .inbox-panel {
+
+        table {
+          width: 100%;
+          border: 1px solid $gainsboro;
+          font-family: 'Lato', sans-serif;
+          a {
+            color: #3e3f3a;
+          }
+
+
+          thead {
+            background-color: black;
+            color:white;
+
+            th {
+              padding: 5px 8px;
+              font-size: 12px;
+            }
+          }
+          tbody {
+            background-color: white;
+            td {
+              padding: 5px 8px;
+              font-size: 18px;
+              border-bottom: solid 1px $gainsboro;
+            }
+          }
+
+          ///////
+        }
+
+    }
+
+  }
+
+  .institution-my-problems {
+    table {
+      width: 100%;
+      border: 1px solid $gainsboro;
+      font-family: 'Lato', sans-serif;
+      a {
+        color: #3e3f3a;
+      }
+
+
+      thead {
+        background-color: black;
+        color:white;
+
+        th {
+          padding: 5px 8px;
+          font-size: 12px;
+        }
+      }
+      tbody {
+        background-color: white;
+        td {
+          padding: 5px 8px;
+          font-size: 18px;
+          border-bottom: solid 1px $gainsboro;
+        }
+      }
+      ///////
+    }
+    .formulation-editable textarea{
+      width: 100%;
+    }
+    ul.problem-tabs{
+        //position: absolute;
+        position: relative;
+        display: block;
+        //float: left;
+        margin-top: 15px;
+        //left: 0;
+        padding-left: 0px;
+        //padding-top: 4px;
+        //font-size: 40px;
+    }
+
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:hover,
+    .nav-tabs>li.active>a:focus {
+        border: 1px solid rgba(151, 151, 151, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6) ;
+        background: rgba(255, 255, 255, 0.5);
+    }
+    div.tab-content{
+        border: 1px solid rgba(151, 151, 151, 0.5);
+        border-top: none;
+        //-webkit-box-shadow: 4px 13px 50px -14px rgba(0,0,0,0.2);
+        //-moz-box-shadow: 4px 13px 50px -14px rgba(0,0,0,0.2);
+        //box-shadow: 4px 13px 50px -14px rgba(0,0,0,0.2);
+        background: rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        width: 100%;
+        min-height: 300px;
+        padding: 15px;
+        margin-bottom:20px;
+    }
+    .problem-textbox{
+        position: relative;
+        //display: block;
+        //float: left;
+        //left: 0;
+        //margin-top: 100px;
+        //top: 20px;
+        width: 100%;
+        margin: 0px;
+        min-height: 300px;
+        color: #3E3F3A;
+        font-family: 'Old Standard TT', serif;
+        font-size: 17px;
+        line-height: 28px;
+        padding: 20px;
+    }
+    .formulation {
+      background: rgba(234, 210, 172, 0.5);
+      border: 1px solid rgba(151, 151, 151, 0.5);
+    }
+    .about {
+      background-color: #D7EBFA;
+      border: 1px solid #A5B3C0
+    }
+    .implications {
+      background-color: #FFD3D0;
+      border: 1px solid #C0A09E;
+    }
+    .updates {
+      background-color: #DEDEDE;
+      border: 1px solid #A3A3A3;
+    }
+
+    .buttons {
+      margin-bottom:30px;
+    }
+    .save-button button {
+      color: white;
+      border: 1px solid black;
+      line-height: 15px;
+      background: $steelblue;
+    }
+    .cancel-button button {
+      border: 1px solid black;
+      line-height: 15px;
+      background: $gainsboro;
+    }
+    .save-button , .cancel-button {
+      float:left
+    }
+    .clear {
+      clear: left;
+    }
+  }
+
+  .institution-new-problem {
+
+  }
+  .institution-solution_review {
+    font-family: 'Lato', sans-serif;
+    i {
+      font-size:50px;
+    }
+    .content {
+      margin-left: 50px;
+      margin-top: 15px;
+
+      .info_marker {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      .accept-button button {
+        background-color: #2aa366;
+        color: white;
+      }
+      .reject-button button {
+        background-color: #9e3120;
+        color: white;
+      }
+      .accept-button, .reject-button {
+        float:left;
+      }
+    }
+  }
+}

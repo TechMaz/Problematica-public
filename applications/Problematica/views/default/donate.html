@@ -1,0 +1,73 @@
+{{extend 'layout.html'}}
+<div class="hidden" id="stripeToken"></div>
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+    var products_url = "{{=URL('default', 'get_products')}}";
+    var successful_donation_url = "{{=URL('default','payment_success')}}"
+</script>
+{{end}}
+
+{{if problem.get_status()=='open':}}
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <form><center>
+      <h2>{{=donor.get_firstname()}}, please review your donation</h2><br>
+
+      <h4><i>Thank you for your support! Your donation goes directly into the bounty,
+          attracting more <br>problem-solvers and bringing us closer to a solution! </i>
+          <br><br>
+          <br>To complete your payment, review the details below and click <b>Donate</b> to carry out your transaction. <br><br>
+          Donation amount: <b>${{=request.vars['donation_amount']}} </b><br>
+          Problem your donation supports: <b>{{=problem.get_title()}} </b> <br> </h4>
+
+  </form>
+        <br>
+  <button id="customButton">Donate</button> </center>
+{{else:}}
+No need to donate to this problem, it's already been solved!
+{{pass}}
+
+<script>
+var handler = StripeCheckout.configure({
+    key: 'pk_test_kfrZqyFRUooVkLdPa9zO6ivO',
+    image: 'https://problematica.herokuapp.com/Problematica/static/images/Problematica_Icon.png',
+    locale: 'auto',
+    email: '{{=donater_email}}',
+  token: function(token) {
+      //$('#stripeToken').html(token.id);
+      sendData(token.id);
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+  }
+});
+
+function redirectOnSuccess(){
+    window.location.href = successful_donation_url;
+}
+function sendData(token){
+    console.log('sendData run')
+    // console.log(token)
+    $.post("/sendDonation/{{=problem_id}}?donation_amount={{=donation_amount}}&user_id={{=donor.get_id()}}", {
+        stripe_token: JSON.stringify(token),
+    }, function(data) {
+        //callback
+        console.log('successful transaction');
+        redirectOnSuccess();
+        }
+    );
+};
+document.getElementById('customButton').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+      name: 'Problematica',
+      description: 'Submit Donation',
+      amount: {{=stripe_donation_amount}}
+  });
+  e.preventDefault();
+});
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>

@@ -1,0 +1,47 @@
+{{extend 'layout.html'}}
+
+{{extend 'layout.html'}}
+
+{{block head}}
+<script>  //for use in solution_review.html/inbox.html
+    var solutions_url = "{{=URL('portal_api', 'get_solutions', user_signature=True)}}";
+    var judge_solution_url = "{{=URL('portal_api', 'judge_solution', user_signature=True)}}";
+    var my_problems_url = "{{=URL('portal_api', 'get_my_problems', user_signature=True)}}";
+    var edit_problem_url = "{{=URL('portal_api', 'edit_problem', user_signature=True)}}";
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+{{end}}
+
+
+<div id="vue-div" class="display:none">
+
+  <div id="portal-navbar">
+    <div v-for="(page, index) in pages" v-on:click="page_selected = index" class="item"
+      v-bind:class="{item_selected: page_selected == index }">
+      <p>${page} <span v-if="page=='Inbox'">({{=pending_solutions_count}})</span></p>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="institution-portal-main-content">
+      <div v-if="page_selected == inbox_page">
+        <div v-if="is_reviewing_solution">
+          {{include 'default/institution_portal/solution_review.html'}}
+        </div>
+        <div v-if="!is_reviewing_solution">
+          {{include 'default/institution_portal/inbox.html'}}
+        </div>
+      </div>
+      <div v-if="page_selected == my_problems_page">
+        {{include 'default/institution_portal/my_problems.html'}}
+      </div>
+      <div v-if="page_selected == new_problems_page">
+        {{include 'default/institution_portal/new_problem.html'}}
+      </div>
+  </div>
+
+</div>
+
+<script src="{{=URL('static', 'js/institution_portal.js')}}"></script>
