@@ -10,7 +10,8 @@ Unsolved problems get solved, in style!
 
 ###Getting Started  
 [Setting up your virtual environment](#setting-up-your-virtual-environment)  
-
+[Set up environment variables](#set-up-environment-variables)  
+[Running the app](#running-the-app)  
 
 
 ##Getting Started  
@@ -24,3 +25,19 @@ Unsolved problems get solved, in style!
 1. Verify that you are in the correct venv by running: `pip -V`. It should show the project folder, not a global disk folder.
 1. Make sure your new virtualenv has the packages listed in requirements.txt by running `pip install -r requirements.txt`
 1. You should be all set to run the project locally!
+
+###Set up environment variables:  
+
+1. Create a new file named `.env` containing all the sensitive data that will be needed, in the following format:
+``` 
+ROOT_URL='https://problematica.herokuapp.com/'
+DATABASE_URL='value'
+ADMIN_PW=value
+STRIPE_API_KEY=value
+STRIPE_CHECKOUT_KEY=value
+```
+replacing the value text by the actual keys and passwords you are using.  
+
+###Running the app:  
+
+1. For current developers with access to Heroku, run the command `heroku local web` 
