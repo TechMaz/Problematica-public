@@ -15,6 +15,7 @@ Unsolved problems get solved, in style!
 
 
 ##Getting Started  
+**Note:** Development currently limited to those who have access to our Heroku account.
 
 ###Setting up your virtual environment:  
 
@@ -36,8 +37,8 @@ ADMIN_PW=value
 STRIPE_API_KEY=value
 STRIPE_CHECKOUT_KEY=value
 ```
-replacing the value text by the actual keys and passwords you are using.  
+replacing the value text by the actual keys and passwords that are being used.  
 
 ###Running the app:  
 
-1. For current developers with access to Heroku, run the command `heroku local web` 
+For current developers with access to Heroku, run the command `heroku local web` 
