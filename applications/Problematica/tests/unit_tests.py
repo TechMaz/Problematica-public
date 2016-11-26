@@ -38,6 +38,14 @@ class TestClass(unittest.TestCase):
         test_user = PicaUser(test_user_id)
         self.assertFalse(test_user.is_found_in_database())
 
+    def test_is_user_same_as(self):
+        test_user_id_1 = 1
+        test_user_id_2 = 2
+        test_user_1 = PicaUser(test_user_id_1)
+        test_user_2 = PicaUser(test_user_id_2)
+        #We want false because the 2 users are clearly not the same
+        self.assertFalse(test_user_1.is_user_same_as(test_user_2))
+
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
 test_result = unittest.TextTestRunner(verbosity=2).run(suite)
