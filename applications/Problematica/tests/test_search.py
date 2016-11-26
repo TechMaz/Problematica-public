@@ -1,4 +1,5 @@
 import unittest
+import sys
 
 from gluon.globals import Request
 db = test_db
@@ -21,3 +22,6 @@ class TestSearch(unittest.TestCase):
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestSearch))
 unittest.TextTestRunner(verbosity=2).run(suite)
+
+ret = not runner.run(suite).wasSuccessful()
+sys.exit(ret)
