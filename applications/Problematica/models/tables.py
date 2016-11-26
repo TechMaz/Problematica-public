@@ -37,7 +37,7 @@ if not os.environ.get("IS_TEST",None):
                     Field('donor_message', type='string'),
                     Field('date_made', type='datetime', default=datetime.datetime.utcnow())
     )
-
+else:
     db.define_table('solutions',
                     Field('id'),
                     Field('attempter_id', type='integer', default='0', requires=IS_NOT_EMPTY()),
@@ -50,6 +50,7 @@ if not os.environ.get("IS_TEST",None):
                     Field('date_submitted', type='datetime', default=datetime.datetime.utcnow())
     )
 
+if not os.environ.get("IS_TEST",None):
     db.define_table('topics',
         Field('topic_name', type='string'),
     	Field('topic_description', type='text')
