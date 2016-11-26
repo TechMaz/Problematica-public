@@ -29,10 +29,15 @@ if not request.env.web2py_runtime_gae:
     # ---------------------------------------------------------------------
     # if NOT running on Google App Engine use SQLite or other DB
     # ---------------------------------------------------------------------
-    db = DAL(os.environ['DATABASE_URL'],
+
+    if not os.environ.get("IS_TEST",None):
+        db = DAL(os.environ['DATABASE_URL'],
             pool_size=myconf.get('db.pool_size'),
             migrate_enabled=myconf.get('db.migrate'),
             check_reserved=['all'])
+    else:
+        db = DAL('sqlite://testing.sqlite')
+
 else:
     # ---------------------------------------------------------------------
     # connect to Google BigTable (optional 'google:datastore://namespace')
@@ -145,3 +150,11 @@ auth.settings.reset_password_requires_verification = True
 
 #default new accounts to user group
 auth.settings.create_user_groups = "user"
+
+
+# Create a test database that's laid out just like the "real" database
+import copy
+test_db = DAL('sqlite://testing.sqlite')  # Name and location of the test DB file
+for tablename in db.tables:  # Copy tables!
+    table_copy = [copy.copy(f) for f in db[tablename]]
+    test_db.define_table(tablename, *table_copy)
