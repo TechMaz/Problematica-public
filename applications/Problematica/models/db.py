@@ -160,5 +160,5 @@ if os.environ.get("IS_TEST",None):
     import copy
     test_db = db  # Name and location of the test DB file
     for tablename in db.tables:  # Copy tables!
-    table_copy = [copy.copy(f) for f in db[tablename]]
-    test_db.define_table(tablename, *table_copy)
+        table_copy = [copy.copy(f) for f in db[tablename]]
+        test_db.define_table(tablename, *table_copy)
