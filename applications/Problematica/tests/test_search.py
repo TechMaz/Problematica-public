@@ -23,5 +23,5 @@ suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestSearch))
 unittest.TextTestRunner(verbosity=2).run(suite)
 
-ret = not runner.run(suite).wasSuccessful()
+ret = not unittest.TextTestRunner(verbosity=2).wasSuccessful()
 sys.exit(ret)
