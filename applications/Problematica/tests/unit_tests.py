@@ -99,6 +99,13 @@ class TestClass(unittest.TestCase):
         solutions = test_user.get_submitted_solutions()
         self.assertEqual(solutions[0].get_id(), 31)
 
+    def test_get_solved_problems(self):
+        test_user_id = 5
+        empty_list = []
+        test_user = PicaUser(test_user_id)
+        solved_problems = test_user.get_solved_problems()
+        self.assertEqual(solved_problems, empty_list)
+
 
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
