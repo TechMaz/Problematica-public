@@ -68,3 +68,11 @@ db.solutions.problem_id.readable = db.solutions.problem_id.writable = False;
 db.donations.donater_id.readable = db.donations.donater_id.writable = False;
 db.donations.problem_id.readable = db.donations.problem_id.writable = False;
 db.donations.date_made.readable = db.donations.date_made.writable = False;
+
+if os.environ.get("IS_TEST",None):
+    # Create a test database that's laid out just like the "real" database
+    import copy
+    test_db = db  # Name and location of the test DB file
+    for tablename in db.tables:  # Copy tables!
+        table_copy = [copy.copy(f) for f in db[tablename]]
+        test_db.define_table(tablename, *table_copy)
