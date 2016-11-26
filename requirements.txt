@@ -1,6 +1,5 @@
 psycopg2==2.6.2
 py==1.4.31
 pyDAL==16.9
-pytest==3.0.4
 requests==2.12.1
 stripe==1.41.1
