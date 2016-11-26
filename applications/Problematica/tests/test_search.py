@@ -21,7 +21,11 @@ class TestSearch(unittest.TestCase):
 
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestSearch))
-unittest.TextTestRunner(verbosity=2).run(suite)
+test_result = unittest.TextTestRunner(verbosity=2).run(suite)
 
-ret = not unittest.TextTestRunner(verbosity=2).wasSuccessful()
+if len(test_result.failures) > 0:
+    ret = 1
+else:
+    ret = 0
+
 sys.exit(ret)
