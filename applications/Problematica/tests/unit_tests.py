@@ -19,10 +19,24 @@ class TestClass(unittest.TestCase):
             output_id.append(users.get_id())
         self.assertEqual(user_list, output_id)
 
+    def test_search2(self):
+        output_id = []
+        user_list = []
+        #input for the method
+        output_users = PicaUser.search("axasfqsfdasd")
+        for users in output_users:
+            output_id.append(users.get_id())
+        self.assertEqual(user_list, output_id)
+
     def test_is_found_in_database(self):
         test_user_id = 5
         test_user = PicaUser(test_user_id)
         self.assertTrue(test_user.is_found_in_database())
+
+    def test_is_found_in_database2(self):
+        test_user_id = 6
+        test_user = PicaUser(test_user_id)
+        self.assertFalse(test_user.is_found_in_database())
 
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
