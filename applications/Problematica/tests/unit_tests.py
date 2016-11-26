@@ -81,7 +81,7 @@ class TestClass(unittest.TestCase):
         test_caps_fullname = "Kfir Dolev"
         self.assertEqual(test_user.get_capitalized_fullname(), test_caps_fullname)
 
-    def test_get_URL(self):
+    def test_get_URL():
         test_user_id = 5
         test_user = PicaUser(test_user_id)
         test_user_url = "/profile/5"
@@ -91,7 +91,7 @@ suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
 test_result = unittest.TextTestRunner(verbosity=2).run(suite)
 
-if (len(test_result.failures) > 0) || (len(test_result.errors) > 0):
+if (len(test_result.failures) > 0) | (len(test_result.errors) > 0):
     ret = 1
 else:
     ret = 0
