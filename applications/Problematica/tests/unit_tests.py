@@ -69,6 +69,12 @@ class TestClass(unittest.TestCase):
         test_firstname = "Khoa"
         self.assertEqual(test_user.get_firstname(), test_firstname)
 
+    def test_firstname2(self):
+        test_user_id = 2
+        test_user = PicaUser(test_user_id)
+        test_firstname = "kfir"
+        self.assertEqual(test_user.get_firstname(), test_firstname)
+
     def test_lastname(self):
         test_user_id = 5
         test_user = PicaUser(test_user_id)
