@@ -37,9 +37,7 @@ if not request.env.web2py_runtime_gae:
             check_reserved=['all'])
     else:
         db = DAL('sqlite://testing.sqlite',
-            pool_size='10',
-            migrate_enabled='false',
-            check_reserved=['all'])
+            migrate_enabled=False)
 
 else:
     # ---------------------------------------------------------------------
