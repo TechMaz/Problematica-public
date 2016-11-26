@@ -36,7 +36,7 @@ if not request.env.web2py_runtime_gae:
             migrate_enabled=myconf.get('db.migrate'),
             check_reserved=['all'])
     else:
-        db = DAL('sqlite://testing.sqlite',migrate_enabled='false',check_reserved=['all'])
+        db = DAL('sqlite://testing.sqlite')
 
 else:
     # ---------------------------------------------------------------------
