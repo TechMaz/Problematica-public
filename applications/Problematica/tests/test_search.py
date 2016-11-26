@@ -2,7 +2,7 @@ import unittest
 
 from gluon.globals import Request
 db = test_db
-execfile("applications/Problematica/controllers/default.py", globals())
+#execfile("applications/Problematica/controllers/default.py", globals())
 
 class TestSearch(unittest.TestCase):
 
