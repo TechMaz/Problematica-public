@@ -93,11 +93,11 @@ class TestClass(unittest.TestCase):
         test_user_url = "/profile/5"
         self.assertEqual(test_user.get_URL(), test_user_url)
 
-    def test_get_submitted_solutions():
+    def test_get_submitted_solutions(self):
         test_user_id = 5
         test_user = PicaUser(test_user_id)
         solutions = test_user.get_submitted_solutions()
-        assertEqual(solutions[0].get_id(), 31)
+        self.assertEqual(solutions[0].get_id(), 31)
 
 
 suite = unittest.TestSuite()
