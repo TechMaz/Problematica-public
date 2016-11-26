@@ -46,6 +46,47 @@ class TestClass(unittest.TestCase):
         #We want false because the 2 users are clearly not the same
         self.assertFalse(test_user_1.is_user_same_as(test_user_2))
 
+    def test_get_id(self):
+        test_user_id = 5
+        test_user = PicaUser(test_user_id)
+        self.assertEqual(test_user.get_id(), test_user_id)
+
+    def test_get_bio(self):
+        test_user_id = 5
+        test_user = PicaUser(test_user_id)
+        test_bio  = "Hi I'm Khoa Luong :)"
+        self.assertEqual(test_user.get_bio(), test_bio)
+
+    def test_get_academic_fields(self):
+        test_user_id = 5
+        test_user = PicaUser(test_user_id)
+        test_acad_fields = "Video Games :)"
+        self.assertEqual(test_user.get_academic_fields(), test_acad_fields)
+
+    def test_firstname(self):
+        test_user_id = 5
+        test_user = PicaUser(test_user_id)
+        test_firstname = "Khoa"
+        self.assertEqual(test_user.get_firstname(), test_firstname)
+
+    def test_lastname(self):
+        test_user_id = 5
+        test_user = PicaUser(test_user_id)
+        test_lastname = "Luong"
+        self.assertEqual(test_user.get_lastname(), test_lastname)
+
+    def test_get_capitalized_fullname():
+        test_user_id = 5
+        test_user = PicaUser(test_user_id)
+        test_caps_fullname = "KHOA LUONG"
+        self.assertEqual(test_user.get_capitalized_fullname(), test_caps_fullname)
+
+    def test_get_URL():
+        test_user_id = 5
+        test_user = PicaUser(test_user_id)
+        test_user_url = "/profile/5"
+        self.assertEqual(test_user.get_URL(), test_user_url)
+
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
 test_result = unittest.TextTestRunner(verbosity=2).run(suite)
