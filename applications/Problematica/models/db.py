@@ -107,8 +107,8 @@ auth.settings.extra_fields['auth_user'] = [
 # -------------------------------------------------------------------------
 # create all tables needed by auth if not custom tables
 # -------------------------------------------------------------------------
-if not os.environ.get("IS_TEST",None):
-    auth.define_tables(username=False, signature=False)
+#if not os.environ.get("IS_TEST",None):
+auth.define_tables(username=False, signature=False)
 
 # -------------------------------------------------------------------------
 # configure email
