@@ -12,7 +12,7 @@ class TestSearch(unittest.TestCase):
 
     def test_search(self):
         output_id = []
-        user_list = [6]
+        user_list = [5]
         #input for the method
         output_users = PicaUser.search("Khoa")
         for users in output_users:
