@@ -36,7 +36,7 @@ if not request.env.web2py_runtime_gae:
             migrate_enabled=myconf.get('db.migrate'),
             check_reserved=['all'])
     else:
-        db = DAL('sqlite://testing.sqlite',migrate_enabled='false')
+        db = DAL('sqlite://testing.sqlite',migrate_enabled='false',check_reserved=['all'])
 
 else:
     # ---------------------------------------------------------------------
@@ -107,7 +107,8 @@ auth.settings.extra_fields['auth_user'] = [
 # -------------------------------------------------------------------------
 # create all tables needed by auth if not custom tables
 # -------------------------------------------------------------------------
-auth.define_tables(username=False, signature=False)
+if not os.environ.get("IS_TEST",None):
+    auth.define_tables(username=False, signature=False)
 
 # -------------------------------------------------------------------------
 # configure email
