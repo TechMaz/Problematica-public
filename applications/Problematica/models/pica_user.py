@@ -73,7 +73,7 @@ class PicaUser:
         return self.db_user.last_name
 
     def get_capitalized_fullname(self):
-        return ((self.get_firstname()).title()+" "+(self.get_lastname()).title())
+        return str(self.get_firstname() + " " + self.get_lastname()).title()
 
     def get_URL(self):
         return URL('profile',args=(self.get_id()))
