@@ -4,4 +4,4 @@ python: "2.7"
 install: "pip install -r requirements.txt"
 # command to run tests
 env: IS_TEST=1
-script:  python  applications/Problematica/tests/test_search.py
+script: python web2py.py -S Problematica -M -R applications/Problematica/tests/test_search.py
