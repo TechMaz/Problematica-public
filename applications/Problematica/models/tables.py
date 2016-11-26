@@ -36,18 +36,18 @@ db.define_table('donations',
                 Field('donor_message', type='string'),
                 Field('date_made', type='datetime', default=datetime.datetime.utcnow())
 )
-if not os.environ.get("IS_TEST",None):
-    db.define_table('solutions',
-                    Field('id'),
-                    Field('attempter_id', type='integer', default='0', requires=IS_NOT_EMPTY()),
-                    Field('problem_id', type='integer', default='0', requires=IS_NOT_EMPTY()),
-                    Field('link_to_solution', type='string', default='', requires=IS_NOT_EMPTY()),
-                    Field('solution_pdf', type='upload', uploadfield='pdf_file'),
-                    Field('pdf_file', 'blob'),
-                    Field('status', requires=IS_IN_SET(['right','wrong','pending', 'too late']), default='pending'),
-                    Field('submitter_comment'),
-                    Field('date_submitted', type='datetime', default=datetime.datetime.utcnow())
-    )
+
+db.define_table('solutions',
+                Field('id'),
+                Field('attempter_id', type='integer', default='0', requires=IS_NOT_EMPTY()),
+                Field('problem_id', type='integer', default='0', requires=IS_NOT_EMPTY()),
+                Field('link_to_solution', type='string', default='', requires=IS_NOT_EMPTY()),
+                Field('solution_pdf', type='upload', uploadfield='pdf_file'),
+                Field('pdf_file', 'blob'),
+                Field('status', requires=IS_IN_SET(['right','wrong','pending', 'too late']), default='pending'),
+                Field('submitter_comment'),
+                Field('date_submitted', type='datetime', default=datetime.datetime.utcnow())
+)
 
 db.define_table('topics',
     Field('topic_name', type='string'),
