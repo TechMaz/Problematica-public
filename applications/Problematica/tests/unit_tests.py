@@ -139,7 +139,7 @@ class TestClass(unittest.TestCase):
         test_user_id = 4
         test_user = PicaUser(test_user_id)
         donated_problems = test_user.get_donated_problems()
-        test_problem_id = 44
+        test_problem_id = 45
         if len(donated_problems) > 0:
             self.assertEqual(donated_problems[0].get_id(), test_problem_id)
         else:
