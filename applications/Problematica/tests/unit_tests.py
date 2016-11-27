@@ -166,7 +166,7 @@ class TestClass(unittest.TestCase):
     def test_get_clean_total_money_donated(self):
         test_user_id = 5
         test_user = PicaUser(test_user_id)
-        test_clean_donation_total = "1K"
+        test_clean_donation_total = "1.0K"
         self.assertEqual(test_user.get_clean_total_money_donated(), test_clean_donation_total)
 
 suite = unittest.TestSuite()
