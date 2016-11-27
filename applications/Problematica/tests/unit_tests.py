@@ -135,6 +135,17 @@ class TestClass(unittest.TestCase):
         else:
             self.assertEqual(len(donations), 1)
 
+    def test_get_donated_problems():
+        test_user_id = 4
+        test_user = PicaUser(test_user_id)
+        donated_problems = test_user.get_donated_problems()
+        test_problem_id = 44
+        if len(donated_problems) > 0:
+            self.assertEqual(donated_problems[0].get_id(), test_problem_id)
+        else:
+            self.assertEqual(len(donated_problems), 1)
+
+
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
 test_result = unittest.TextTestRunner(verbosity=2).run(suite)
