@@ -124,6 +124,14 @@ class TestClass(unittest.TestCase):
         test_user = PicaUser(test_user_id)
         self.assertEqual(test_user.get_num_problems_solved(), test_num_solved)
 
+    def test_get_donations(self):
+        test_user_id = 5
+        test_user = PicaUser(test_user_id)
+        test_donation_id = 5
+        test_donation = PicaDonation(test_donation_id)
+        donations = test_user.get_donations()
+        self.assertEqual(donations[0], test_donation)
+
 
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
