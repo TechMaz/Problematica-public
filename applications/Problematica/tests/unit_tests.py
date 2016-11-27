@@ -145,6 +145,11 @@ class TestClass(unittest.TestCase):
         else:
             self.assertEqual(len(donated_problems), 1)
 
+    def test_get_total_money_donated(self):
+        test_user_id = 4
+        test_user = PicaUser(test_user_id)
+        test_donation_total = 120
+        self.assertEqual(test_user.get_total_money_donated(), test_donation_total)
 
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
