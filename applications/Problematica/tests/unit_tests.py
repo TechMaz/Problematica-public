@@ -131,7 +131,7 @@ class TestClass(unittest.TestCase):
         test_donation = PicaDonation(test_donation_id)
         donations = test_user.get_donations()
         if len(donations) > 0:
-            self.assertEqual(donations[0], test_donation)
+            self.assertEqual(donations[0].get_amount(), test_donation.get_amount())
         else:
             self.assertEqual(len(donations), 1)
 
