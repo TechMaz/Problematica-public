@@ -106,6 +106,11 @@ class TestClass(unittest.TestCase):
         solved_problems = test_user.get_solved_problems()
         self.assertEqual(solved_problems, empty_list)
 
+    def test_get_total_bounty_won(self):
+        test_user_id = 2
+        test_bounty = 1100
+        test_user = PicaUser(test_user_id)
+        self.assertEqual(test_user.get_total_bounty_won(), test_bounty)
 
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
