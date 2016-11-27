@@ -135,7 +135,7 @@ class TestClass(unittest.TestCase):
         else:
             self.assertEqual(len(donations), 1)
 
-    def test_get_donated_problems():
+    def test_get_donated_problems(self):
         test_user_id = 4
         test_user = PicaUser(test_user_id)
         donated_problems = test_user.get_donated_problems()
