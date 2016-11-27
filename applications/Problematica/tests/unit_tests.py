@@ -112,6 +112,19 @@ class TestClass(unittest.TestCase):
         test_user = PicaUser(test_user_id)
         self.assertEqual(test_user.get_total_bounty_won(), test_bounty)
 
+    def test_get_num_problems_solved(self):
+        test_user_id = 5
+        test_num_solved = 0
+        test_user = PicaUser(test_user_id)
+        self.assertEqual(test_user.get_num_problems_solved(), test_num_solved)
+
+    def test_get_num_problems_solved2(self):
+        test_user_id = 2
+        test_num_solved = 1
+        test_user = PicaUser(test_user_id)
+        self.assertEqual(test_user.get_num_problems_solved(), test_num_solved)
+
+
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
 test_result = unittest.TextTestRunner(verbosity=2).run(suite)
