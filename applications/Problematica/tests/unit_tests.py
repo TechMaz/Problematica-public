@@ -169,6 +169,13 @@ class TestClass(unittest.TestCase):
         test_clean_donation_total = "1.0K"
         self.assertEqual(test_user.get_clean_total_money_donated(), test_clean_donation_total)
 
+    def test_set_bio(self):
+        test_user_id = 5
+        test_new_bio = "Hi I'm Khoa"
+        test_user = PicaUser(test_user_id)
+        new_bio = test_user.set_bio(test_new_bio)
+        self.assertEqual(new_bio, test_user.get_bio())
+
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
 test_result = unittest.TextTestRunner(verbosity=2).run(suite)
