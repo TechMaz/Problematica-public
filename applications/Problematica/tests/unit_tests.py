@@ -176,6 +176,14 @@ class TestClass(unittest.TestCase):
         new_bio = test_user.set_bio(test_new_bio)
         self.assertEqual(new_bio, test_user.get_bio())
 
+    def test_set_academic_fields(self):
+        test_user_id = 5
+        test_new_field = "Science"
+        test_user = PicaUser(test_user_id)
+        new_field = test_user.set_academic_fields(test_new_field)
+        self.assertEqual(test_new_field, test_user.get_academic_fields())
+
+
 suite = unittest.TestSuite()
 suite.addTest(unittest.makeSuite(TestClass))
 test_result = unittest.TextTestRunner(verbosity=2).run(suite)
