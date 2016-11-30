@@ -76,7 +76,7 @@ body {
 }
 
 .navbar-problematica{
-    background-color: $tuscan;
+    background-color: rgba(240, 216, 168, 0.8);
     border-bottom-color: rgb(62, 63, 58);
     min-height: 55px;
     max-height: 60px;
@@ -126,7 +126,7 @@ body {
     .search-bar{
         position: absolute;
         display: inline-block;
-        background-color: $pearl;
+        background-color: rgba(242, 228, 200, 0.6);
         top: 0;
         left: auto;
         right: 0;
@@ -139,7 +139,7 @@ body {
         font-size: 18px;
         color: $regal;
         border: 0px solid transparent;
-        border-left: 1px solid $gainsboro;
+        border-left: 1px solid rgba(222, 222, 222, 0.2);
     }
 }
 
