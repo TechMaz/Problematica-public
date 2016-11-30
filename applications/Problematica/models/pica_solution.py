@@ -90,7 +90,7 @@ class PicaSolution:
         if status == "right":
             self.db_solution.status = "right"
             self.db_solution.update_record()
-        elif status == "incorrect":
+        elif status == "wrong":
             self.db_solution.status = "wrong"
             self.db_solution.update_record()
         elif status == "too late":
