@@ -284,6 +284,49 @@
                 }
             }
 
+                .add_post_div{
+                    border-radius: 5px;
+                    float: center;
+                    width: 225px;
+                    height: 110px;
+                    margin-top: 40px;
+                    background: rgba(66, 129, 164, .85);
+                }
+
+                    .add-new-post{
+
+                    }
+                        .form-group{
+
+                        }
+
+                            .form-control{
+                                width:75%;
+                                margin-left: 33px;
+                                margin-bottom: 0px;
+                            }
+
+                        .post-button{
+                            background: #9e3120;
+                            color: white;
+                            border-radius: 5px;
+                            float:left;
+                            margin-left:18%;
+                            margin-top:-5.7%;
+                            border: solid black 1px;
+                        }
+
+                        .cancel-button{
+                            color: black;
+                            background-color: gainsboro;
+                            position:absolute;
+                            float:right;
+                            margin-right: 15%;
+                            margin-left: 35%;
+                            margin-top:-14%;
+                        }
+
+
             .submit-sol-btn{
                 float: right;
                 width: 140px;
@@ -303,6 +346,7 @@
                 }
             }
         }
+
         .solved-by{
           position: absolute;
           //display: block;

@@ -47,9 +47,9 @@
                 <div class="donate-or-solve">
                 <a href="/postsolution/{{=request.args(0,cast=int)}}"><button class="btn submit-sol-btn">Submit Solution</button></a>
                 <button class="btn donate-btn" v-on:click="donate_button()">Donate to This Problem</button>
-                    <div v-if="is_donating" id="add_post_div">
+                    <div v-if="is_donating" class="add_post_div">
                         <form action="#" v-on:submit.prevent="add_donation" class="form-horizontal" enctype="multipart/form-data" method="post">
-                            <div id="add-new-post">
+                            <div class="add-new-post">
                                 <div class="form-group" id="no_table_post__row">
                                     <div><input class="form-control string" id="no_table_post" name="post_content" type="number" v-model="form_post_content" placeholder="Donation Amount"> </input>
                                         <span class="help-block"></span>
@@ -63,7 +63,7 @@
                             </div>
                         </form>
                     </div>
-                    <button v-if="is_donating" class="btn btn-warning btn-sm" v-on:click="donate_button()">Cancel</button>
+                    <button v-if="is_donating" class="cancel-button btn-sm" v-on:click="donate_button()">Cancel</button>
                     <!-- <a href="/donate/{{=request.args(0,cast=int)}}?donation_amount=10"><button class="btn donate-btn" role="button">Donate to This Problem</button></a> -->
                 </div>
                 {{elif problem.get_status() == 'closed':}}
