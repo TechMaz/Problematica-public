@@ -20,9 +20,35 @@ div.bkgimg-login{
         left: 50%;
         margin-top: -28vmin;
         margin-left: -30vmin;
+        background-color: rgba(255,255,255,0.85);
 
+        .form-control{
+            background-color: transparent;
+        }
+
+        input::-webkit-input-placeholder {
+            color: rgba(117, 127, 154, 0.7) !important;
+        }
+
+        input:-moz-placeholder { /* Firefox 18- */
+            color: rgba(117, 127, 154, 0.7) !important;
+        }
+
+        input::-moz-placeholder {  /* Firefox 19+ */
+            color: rgba(117, 127, 154, 0.7) !important;
+        }
+
+        input:-ms-input-placeholder {
+            color: rgba(117, 127, 154, 0.7) !important;
+        }
+
+        .panel-heading{
+            //font-size: 16px;
+            background-color: rgba(221, 213, 208, 0.6);
+        }
         .panel-title{
             font-size: 16px;
+            background-color: transparent;
         }
 
         .rememberme{

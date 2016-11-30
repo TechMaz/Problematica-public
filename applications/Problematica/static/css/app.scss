@@ -25,18 +25,30 @@ body {
 }
 
 .bkgimg-signup{
-    background-image: url(https://res.cloudinary.com/techmaz/image/upload/v1476228559/cloudymountains_fut5bd.jpg);
+    //background-image: url(https://res.cloudinary.com/techmaz/image/upload/v1476228559/cloudymountains_fut5bd.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    //background-image: linear-gradient( 175deg , #4ac1ff, #795bb0 )
+
+
+    background: #757F9A; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #757F9A , #D7DDE8); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #757F9A , #D7DDE8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .bkgimg-login{
-    background-image: url(https://res.cloudinary.com/techmaz/image/upload/v1476479581/choppywaves_lmy33k.jpg);
+    //background-image: url(https://res.cloudinary.com/techmaz/image/upload/v1476479581/choppywaves_lmy33k.jpg);
     //url(https://res.cloudinary.com/techmaz/image/upload/v1476229500/prettytrail_d305kf.jpg)
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    background: #DD5E89; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #DD5E89 , #F7BB97); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #DD5E89 , #F7BB97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .noselect {

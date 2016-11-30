@@ -1,6 +1,6 @@
 
 div.bkgimg-signup{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 0;
@@ -21,9 +21,35 @@ div.bkgimg-signup{
         margin-top: -28vmin;
         margin-left: -30vmin;
         max-height: 600px;
+        background-color: rgba(255,255,255,0.85);
 
+        .form-control{
+            background-color: transparent;
+        }
+
+        input::-webkit-input-placeholder {
+            color: rgba(117, 127, 154, 0.7) !important;
+        }
+
+        input:-moz-placeholder { /* Firefox 18- */
+            color: rgba(117, 127, 154, 0.7) !important;
+        }
+
+        input::-moz-placeholder {  /* Firefox 19+ */
+            color: rgba(117, 127, 154, 0.7) !important;
+        }
+
+        input:-ms-input-placeholder {
+            color: rgba(117, 127, 154, 0.7) !important;
+        }
+
+        .panel-heading{
+            //font-size: 16px;
+            background-color: rgba(221, 213, 208, 0.6);
+        }
         .panel-title{
             font-size: 16px;
+            background-color: transparent;
         }
 
         input.btn.btn-primary{
@@ -35,6 +61,8 @@ div.bkgimg-signup{
             left: 50%;
             margin-left: -13vmin;
             bottom: 2.5vmin;
+            border-radius: 3px;
+            background-color: rgba(158, 49, 32, 0.8);
 
             /*.signup-btn-text{
                 margin-top: -1px;
