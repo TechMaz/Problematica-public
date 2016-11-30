@@ -102,7 +102,7 @@ auth.settings.extra_fields['auth_user'] = [
     Field('acadfields', default=''),
     Field('admin_status', type='boolean'),
     Field('institution', type='string'),
-    Field('date_created', type='string')
+    Field('date_created', type='datetime', default=datetime.datetime.utcnow())
 ]
 
 # -------------------------------------------------------------------------
