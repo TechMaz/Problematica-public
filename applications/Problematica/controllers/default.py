@@ -281,10 +281,9 @@ def donate():
     donor = PicaUser(logged_in_user_id)
     problem_id = int(request.args(0))
     problem = PicaProblem(problem_id)
-    if request_amount is not '':
+    if request_amount is not '' and request_amount != 'null':
         donation_amount = int(request_amount)
         stripe_donation_amount = donation_amount*100 #stripe takes donation amount in pennies
-        # print(stripe_donation_amount)
         # Set your secret key: remember to change this to your live secret key in production
         # See your keys here: https://dashboard.stripe.com/account/apikeys
         stripe.api_key = os.environ['STRIPE_API_KEY']
@@ -296,23 +295,6 @@ def donate():
     else:
         return "Please return to the previous page and enter an integer value as your donation amount."
 
-    #token = request.args(0)
-    #print(token)
-    # Get the credit card details submitted by the form
-    #token = request.POST['stripeToken']
-    #print(request.vars.stripe_token)
-    '''token =
-     #Create a charge: this will charge the user's card
-    try:
-        charge = stripe.Charge.create(
-            amount=1000,  # Amount in cents
-            currency="usd",
-            source=token,
-            description="Example charge"
-        )
-    except stripe.error.CardError as e:
-        # The card has been declined
-        pass'''
     return dict(stripe_donation_amount=stripe_donation_amount, donation_amount=donation_amount,
                 donater_email=donater_email, problem_id=problem_id, problem=problem, donor = donor, checkout_key=checkout_key)
 
