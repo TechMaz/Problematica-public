@@ -49,11 +49,11 @@ class PicaBeautify:
             if second_diff < 60:
                 return str(second_diff) + "s ago"
             if second_diff < 120:
-                return "a minute ago"
+                return "1m ago"
             if second_diff < 3600:
                 return str(second_diff / 60) + "m ago"
             if second_diff < 7200:
-                return "an hour ago"
+                return "1h ago"
             if second_diff < 86400:
                 return str(second_diff / 3600) + "h ago"
         if day_diff == 1:
