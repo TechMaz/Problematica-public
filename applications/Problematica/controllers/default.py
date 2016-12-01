@@ -283,6 +283,8 @@ def donate():
     problem = PicaProblem(problem_id)
     if request_amount is not '' and request_amount != 'null':
         donation_amount = int(request_amount)
+        if donation_amount <= 0:
+            return "Please return to the previous page and enter a positive integer value as your donation amount."
         stripe_donation_amount = donation_amount*100 #stripe takes donation amount in pennies
         # Set your secret key: remember to change this to your live secret key in production
         # See your keys here: https://dashboard.stripe.com/account/apikeys
