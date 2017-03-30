@@ -8,16 +8,16 @@ Unsolved problems get solved, in style!
 
 ## Table of Contents:
 
-###Getting Started  
+### Getting Started  
 [Setting up your virtual environment](#setting-up-your-virtual-environment)  
 [Set up environment variables](#set-up-environment-variables)  
 [Running the app](#running-the-app)  
 
 
-##Getting Started  
+## Getting Started  
 **Note:** Development currently limited to those who have access to our Heroku account.
 
-###Setting up your virtual environment:  
+### Setting up your virtual environment:  
 
 1. Install the virtualenv package by running `pip install virtualenv`.
 1. Create a folder called `virtualenv` at the same level as the root folder of the cloned Problematica repo.
@@ -27,10 +27,10 @@ Unsolved problems get solved, in style!
 1. Make sure your new virtualenv has the packages listed in requirements.txt by running `pip install -r requirements.txt`
 1. You should be all set to run the project locally!
 
-###Set up environment variables:  
+### Set up environment variables:  
 
 1. Create a new file named `.env` containing all the sensitive data that will be needed, in the following format:
-``` 
+```
 ROOT_URL='https://problematica.herokuapp.com/'
 DATABASE_URL='value'
 ADMIN_PW=value
@@ -39,6 +39,7 @@ STRIPE_CHECKOUT_KEY=value
 ```
 replacing the value text by the actual keys and passwords that are being used.  
 
-###Running the app:  
+### Running the app:  
 
-For current developers with access to Heroku, run the command `heroku local web` 
+For current developers with access to Heroku, run the command `heroku local web`   
+The app should now be running on [http://localhost:5000/](http://localhost:5000/)
